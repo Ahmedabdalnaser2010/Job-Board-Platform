@@ -1,5 +1,5 @@
 import JobsHeader from "@/componenets/jobsPage/JobsHeader"
-import { CheckBadgeIcon, EyeIcon, EyeSlashIcon } from "@heroicons/react/24/outline"
+import { EyeIcon, EyeSlashIcon } from "@heroicons/react/24/outline"
 import Link from "next/link"
 import { useRouter } from "next/router"
 import { useState } from "react"

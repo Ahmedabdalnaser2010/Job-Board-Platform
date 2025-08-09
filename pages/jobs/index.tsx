@@ -17,8 +17,6 @@ const Index = () => {
             <JobsHeader headTitle={"jobs"} />
 
             <section className='mt-6 p-6 2xl:w-[1440px] m-auto  min-h-[600px] flex md:flex-row flex-col items-center justify-center md:justify-between md:items-start  gap-2  '>
-
-
                 <FilterNavBar />
                 <AllJobs selectedJobs={finalFetchedData} />
 

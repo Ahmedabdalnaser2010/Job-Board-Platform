@@ -37,29 +37,10 @@ const JobDetailes = () => {
             setSimilarJobs(getSimilarJobs)
         }
 
-
-
-
-
     }, [jobData, route.asPath])
 
 
 
-    console.log(selectedJob)
-    console.log(similarJobs)
-
-
-
-
-
-    // const getSelectedJob: TDetailedJobData[] = jobData.filter((el: TDetailedJobData) => {
-    //     return el.id == Number(SelectedId?.param && Object.values(SelectedId?.param))
-    // })
-
-
-
-    console.log(selectedJob)
-    console.log(similarJobs)
 
     return (
         <div >

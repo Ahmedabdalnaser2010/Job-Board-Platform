@@ -11,12 +11,11 @@ const CategoryPage = () => {
     const { jobData } = useContext(ApiContext)
     const [jobCategory, setJobCategory] = useState<TDetailedJobData[]>([])
 
-    console.log(route.query.categoryPage)
+
     const currentCategory = route.query.categoryPage
 
+
     useEffect(() => {
-
-
 
         const JobsInSameCategory = jobData.filter((jobs) => {
 
@@ -28,9 +27,9 @@ const CategoryPage = () => {
             setJobCategory(JobsInSameCategory)
         }
 
-    }, [jobData])
+    }, [jobData, currentCategory])
 
-    console.log(jobCategory)
+
 
 
     return (

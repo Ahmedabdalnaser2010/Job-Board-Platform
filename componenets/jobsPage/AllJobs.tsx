@@ -6,9 +6,9 @@ const AllJobs = ({ selectedJobs }: { selectedJobs: TDetailedJobData[] }) => {
 
 
     return (
-        <div className='flex flex-col items-end justify-between'>
+        <div className='flex flex-col items-end justify-between '>
             <SortButton />
-            <section className=' self-center w-full grid grid-cols-1 gap-14 m-auto md:m-0 h-[600px] overflow-y-scroll px-3 '>
+            <section className=' self-center w-full grid grid-cols-1 items-start gap-14 m-auto md:m-0 h-[400px] overflow-y-scroll px-3 '>
 
                 {selectedJobs.map((job: TDetailedJobData) => (
 

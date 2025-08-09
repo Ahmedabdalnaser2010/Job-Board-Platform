@@ -22,7 +22,7 @@ const JobCard = ({ jobID, publishingtime, employerLogo, jobTitle, companyName, c
 
 
     return (
-        <div className={`flex flex-col justify-between capitalize ${submitTitle == "apply job" ? "" : "border-1 border-gray-100 shadow-lg p-5 rounded-2xl "} ${router.asPath == "/jobs" ? "lg:w-[600px] xl:w-[900px] w-full " : "w-full "} md:max-h-[200px]   min-w-[300px] md:min-w-[380px] `}>
+        <div className={`flex flex-col justify-between capitalize ${submitTitle == "apply job" ? "" : "border-1 border-gray-100 shadow-lg p-5 rounded-2xl "} ${router.asPath == "/jobs" ? "lg:w-[600px] xl:w-[900px] w-full " : "w-full "}  lg:max-h-[300px] min-w-[300px] md:min-w-[380px] `}>
             <div className='flex justify-between items-center'>
                 <span className='normal-case text-primary-green bg-primary-background-lightgreen px-2 py-1 text-xs rounded-xl'>{getPuplishingTime}</span>
                 <BookmarkSquareIcon className='w-[20px] ' />

@@ -1,5 +1,5 @@
 import { TDetailedJobData } from '@/interfaces'
-import React, { ReactNode, useContext, useEffect, useState } from 'react'
+import React, { ReactNode, useContext, useState } from 'react'
 import { createContext } from 'react'
 import { ApiContext } from './apiContext'
 

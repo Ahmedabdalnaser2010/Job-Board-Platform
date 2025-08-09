@@ -22,7 +22,7 @@ const Footer = () => {
                     <h1 className='font-semibold text-xl'>company</h1>
                     <div className='flex flex-col items-center lg:items-start gap-2'>
                         <Link href={"/aboutUs"}>about us</Link>
-                        <Link href={"/"}>our terms</Link>
+                        <Link href={"/contactUs"}>Contact us</Link>
                         <Link href={"/"}>partners</Link>
                         <Link href={"/"}>for candidates</Link>
                         <Link href={"/"}>for employers</Link>

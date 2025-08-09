@@ -1,6 +1,7 @@
 import { TDetailedJobData } from '@/interfaces'
 import JobCard from '../articleBody/JobCard'
 import SortButton from './SortButton'
+import Loading from '../layout/Loading'
 
 const AllJobs = ({ selectedJobs }: { selectedJobs: TDetailedJobData[] }) => {
 
@@ -10,7 +11,7 @@ const AllJobs = ({ selectedJobs }: { selectedJobs: TDetailedJobData[] }) => {
             <SortButton />
             <section className=' self-center w-full grid grid-cols-1 items-start gap-14 m-auto md:m-0 h-[400px] overflow-y-scroll px-3 '>
 
-                {selectedJobs.map((job: TDetailedJobData) => (
+                {selectedJobs.length > 0 ? selectedJobs.map((job: TDetailedJobData) => (
 
                     <JobCard
                         key={job.id}
@@ -30,7 +31,7 @@ const AllJobs = ({ selectedJobs }: { selectedJobs: TDetailedJobData[] }) => {
                         submitTitle="job details"
                     />
 
-                ))}
+                )) : <Loading />}
             </section>
         </div>
     )

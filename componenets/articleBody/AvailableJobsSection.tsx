@@ -3,6 +3,7 @@ import React, { useContext } from 'react'
 import JobCard from './JobCard'
 import { TDetailedJobData } from '@/interfaces'
 import { ApiContext } from '@/context/apiContext'
+import Loading from '../layout/Loading'
 
 const AvailableJobsSection = () => {
 
@@ -26,7 +27,7 @@ const AvailableJobsSection = () => {
             <section className='py-12 self-center w-full grid grid-cols-1 gap-14'>
 
 
-                {displayedJobs.map((job: TDetailedJobData) => (
+                {displayedJobs.length > 0 ? displayedJobs.map((job: TDetailedJobData) => (
 
                     <div key={job.id}>
                         <JobCard
@@ -47,7 +48,7 @@ const AvailableJobsSection = () => {
                         />
                     </div>
 
-                ))}
+                )) : <Loading />}
 
             </section>
         </div>

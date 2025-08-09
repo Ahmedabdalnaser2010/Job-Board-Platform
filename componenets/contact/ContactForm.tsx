@@ -37,7 +37,7 @@ export default function ContactForm() {
             <div className='flex flex-col md:flex-row w-full  gap-4'>
                 <div className='flex flex-col items-start gap-2 mt-3 w-full'>
                     <label htmlFor="email" className='text-sm font-semibold '>e-mail</label>
-                    <input type="text" name='email' id='email' placeholder='your E-Mail address' className='p-2 w-full bg-background-white rounded-md' />
+                    <input type="text" name='email' id='email' placeholder='your E-mail address' className='p-2 w-full bg-background-white rounded-md' />
                     <ValidationError
                         prefix="Email"
                         field="Email"

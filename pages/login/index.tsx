@@ -46,7 +46,7 @@ const Login = () => {
 
                 <div className="min-w-[320px] md:w-[400px] shadow-lg p-6
                 mt-4 rounded-2xl">
-                    <h3 className="text-xl text-center font-medium text-gray-900 dark:text-white py-2">Let's get started!</h3>
+                    <h3 className="text-xl text-center font-medium text-gray-900 dark:text-white py-2">Let&apos;s get started!</h3>
                     <div className="flex justify-center text-sm font-medium text-gray-500 dark:text-gray-300 py-4">
                         Not registered?&nbsp;
                         <Link href="/register" className="text-primary-green hover:underline ">

@@ -8,7 +8,6 @@ export default function Document() {
     <Html lang="en">
 
       <Head>
-        <title>Job Platform -ALX</title>
         <link rel="icon" href="/assets/icons/Icon+bg.svg" />
       </Head>
 

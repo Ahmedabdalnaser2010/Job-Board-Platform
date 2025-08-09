@@ -1,12 +1,18 @@
 import HomeBody from "@/componenets/articleBody/HomeBody";
+import Head from "next/head";
 
 
 export default function Home() {
   return (
-    <div>
+    <>
+      <Head>
+        <title>Job Platform - ALX</title>
+      </Head>
+      <div>
+        <HomeBody />
 
-      <HomeBody />
+      </div>
+    </>
 
-    </div>
   );
 }

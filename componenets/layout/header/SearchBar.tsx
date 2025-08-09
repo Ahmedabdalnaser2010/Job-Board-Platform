@@ -65,7 +65,6 @@ const SearchBar = () => {
     }
 
 
-    console.log(pathname)
     return (
         <div className='flex w-[300px] md:w-[700px] items-center flex-col md:flex-row  p-3 md:px-0 bg-background-white rounded-2xl md:h-[60px] justify-between'>
             <form action="" onSubmit={handleSubmit} className='bg-background-white  w-full flex flex-col items-center md:flex-row md:rounded-2xl pl-2'>

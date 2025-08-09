@@ -94,7 +94,6 @@ const FilterProvider = ({ children }: { children: ReactNode }) => {
     const getFilteredItemsByJobTitle = getFilteredItemsByCategory.filter((el: TDetailedJobData) => el.job_title.toString().toLocaleLowerCase().trim() == searchValues.jobTitle.toString().toLocaleLowerCase().trim())
 
 
-    console.log(getFilteredItemsByJobTitle)
 
 
     // filter by location

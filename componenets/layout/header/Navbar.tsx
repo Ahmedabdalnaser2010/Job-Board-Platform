@@ -1,13 +1,13 @@
 import Link from 'next/link';
 import { BriefcaseIcon } from '@heroicons/react/24/outline';
 import { useRouter } from 'next/router';
+import { FiUser } from 'react-icons/fi';
 
 const Navbar = () => {
 
     const router = useRouter()
 
 
-    console.log(router.asPath)
 
     return (
         <div className='h-[80px] text-[0.9em] flex capitalize items-center justify-between text-background-white sticky top-0 z-20'>
@@ -23,8 +23,18 @@ const Navbar = () => {
 
             </nav>
             <div className="register flex items-center gap-4">
-                <Link href={"/login"}>login</Link>
-                <Link href={"/register"} className='py-2 px-3 bg-primary-green rounded-xl'>register</Link>
+                <Link href={"/login"}>
+                    <button className='flex items-center ' aria-label='Login'>
+
+                        <FiUser className='text-2xl text-background-white  hover:text-primary-green' />
+                        <div className='flex flex-col justify-between items-start ml-2 '>
+                            <span className='text-sm'>Hello,</span>
+                            <span className='font-bold hover:text-primary-green '>Login</span>
+                        </div>
+
+                    </button>
+                </Link>
+                {/* <Link href={"/register"} className='py-2 px-3 bg-primary-green rounded-xl'>register</Link> */}
 
             </div>
         </div >

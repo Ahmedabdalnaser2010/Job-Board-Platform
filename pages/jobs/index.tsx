@@ -1,4 +1,5 @@
 
+import PageHeadTitle from '@/componenets/common/PageHeadTitle'
 import AllJobs from '@/componenets/jobsPage/AllJobs'
 import FilterNavBar from '@/componenets/jobsPage/FilterNavBar'
 import JobsHeader from '@/componenets/jobsPage/JobsHeader'
@@ -11,18 +12,20 @@ const Index = () => {
 
     return (
 
+        <>
+            <PageHeadTitle title='jobs' />
+            <div>
+                <JobsHeader headTitle={"jobs"} />
+
+                <section className='mt-6 p-6 2xl:w-[1440px] m-auto  min-h-[600px] flex md:flex-row flex-col items-center justify-center md:justify-between md:items-start  gap-2  '>
+                    <FilterNavBar />
+                    <AllJobs selectedJobs={finalFetchedData} />
 
 
-        <div>
-            <JobsHeader headTitle={"jobs"} />
+                </section>
+            </div>
+        </>
 
-            <section className='mt-6 p-6 2xl:w-[1440px] m-auto  min-h-[600px] flex md:flex-row flex-col items-center justify-center md:justify-between md:items-start  gap-2  '>
-                <FilterNavBar />
-                <AllJobs selectedJobs={finalFetchedData} />
-
-
-            </section>
-        </div>
 
 
 

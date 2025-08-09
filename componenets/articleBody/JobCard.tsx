@@ -7,7 +7,7 @@ import { useRouter } from 'next/router'
 const JobCard = ({ jobID, publishingtime, employerLogo, jobTitle, companyName, category, experience, maxSalary, minSalary, country, city, submitTitle }: TJobData) => {
 
     const router = useRouter()
-    console.log(router.asPath)
+
 
     const postingDate = new Date(publishingtime || "")
     const currentDate = new Date()
@@ -28,7 +28,7 @@ const JobCard = ({ jobID, publishingtime, employerLogo, jobTitle, companyName, c
                 <BookmarkSquareIcon className='w-[20px] ' />
             </div>
             <div className='mt-6 flex md:flex-row flex-col items-start gap-5 capitalize'>
-                {employerLogo ? <Image src={employerLogo} alt={companyName || ""} width={40} height={40} /> : <BriefcaseIcon className='text-primary-green w-[30px]' />}
+                {employerLogo ? <Image src={employerLogo} alt={companyName || ""} width={50} height={50} /> : <BriefcaseIcon className='text-primary-green w-[30px]' />}
                 <div>
                     <div className="font-bold">{jobTitle}</div>
                     <span className='text-xs'>{companyName}</span>

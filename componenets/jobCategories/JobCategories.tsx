@@ -18,7 +18,7 @@ const JobCategories = () => {
 
     }, [])
 
-    console.log(categoryData)
+
 
     return (
 

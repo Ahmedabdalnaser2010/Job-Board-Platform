@@ -9,7 +9,7 @@ import { useEffect, useState } from "react";
 
 export default function App({ Component, pageProps }: AppProps) {
 
-  const [isLoading, setIsLoading] = useState(true); // Start with true for initial load
+  const [isLoading, setIsLoading] = useState(true);
   const router = useRouter();
 
   useEffect(() => {

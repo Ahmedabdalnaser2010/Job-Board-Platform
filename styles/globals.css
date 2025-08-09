@@ -1,15 +1,39 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+/* :root {
+  --background-main: #F1F2F4;
+  --background-white: #FFFFFF;
+  --primary-blue: #0A65CC;
+  --primary-text: #18191C;
+  --secondary-text-header: #5E6670;
+  --secondary-text: #767F8C;
+  --placeholder-text: #9199A3;
+  --light-blue-background: #E7F0FA;
+  --light-green-background: #E7F6EA;
+  --dark-green-background: #0BA02C;
+  --light-red-background: #FCEEEE;
+  --dark-red-background: #E05151;
+} */
+
+* {
+  box-sizing: border-box;
 }
 
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --color-background-main: #000000;
+  --color-background-white: #FFFFFF;
+  --color-primary-green: #309689;
+  --color-primary-background-lightgreen: #ecf5f4;
+  --color-placeholder-gray: #a0a0a080;
+  /* --color-primary-text: #18191C;
+  --color-secondary-text-header: #5E6670;
+  --color-secondary-text: #767F8C;
+  --color-placeholder-text: #9199A3;
+  --color-light-blue-background: #E7F0FA;
+  --color-light-green-background: #E7F6EA;
+  --color-dark-green-background: #0BA02C;
+  --color-light-red-background: #FCEEEE;
+  --color-dark-red-background: #E05151; */
 }
 
 @media (prefers-color-scheme: dark) {
@@ -20,7 +44,28 @@
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
+  background: var(--background-main);
+  color: var(--background-main);
   font-family: Arial, Helvetica, sans-serif;
+}
+
+@layer components {
+  .container {
+    @apply 2xl:w-[1440px]
+  }
+}
+
+.active {
+  color: #fff;
+  border-bottom: 3px solid #309689;
+  padding-bottom: 3px;
+}
+
+li {
+  list-style-image: url("/assets/icons/check.png") !important;
+
+}
+
+button {
+  cursor: pointer;
 }

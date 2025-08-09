@@ -108,6 +108,7 @@ const JobRequest = () => {
                             </label>
                             <textarea
                                 name="q1"
+                                id='q1'
                                 value={formData.q1}
                                 onChange={handleChange}
                                 className={`w-full min-h-[80px] p-2 bg-gray-50 border-1 border-placeholder-gray outline-none ${errors.q1 ? 'border-red-500' : ''}`}
@@ -121,6 +122,7 @@ const JobRequest = () => {
                             </label>
                             <textarea
                                 name="q2"
+                                id='q2'
                                 value={formData.q2}
                                 onChange={handleChange}
                                 className={`w-full min-h-[80px] p-2 bg-gray-50 border-1 border-placeholder-gray outline-none ${errors.q2 ? 'border-red-500' : ''}`}
@@ -134,6 +136,7 @@ const JobRequest = () => {
                             </label>
                             <textarea
                                 name="q3"
+                                id='q3'
                                 value={formData.q3}
                                 onChange={handleChange}
                                 className={`w-full min-h-[80px] p-2 bg-gray-50 border-1 border-placeholder-gray outline-none ${errors.q3 ? 'border-red-500' : ''}`}
@@ -147,6 +150,7 @@ const JobRequest = () => {
                             </label>
                             <textarea
                                 name="q4"
+                                id='q4'
                                 value={formData.q4}
                                 onChange={handleChange}
                                 className={`w-full min-h-[80px] p-2 bg-gray-50 border-1 border-placeholder-gray outline-none ${errors.q4 ? 'border-red-500' : ''}`}

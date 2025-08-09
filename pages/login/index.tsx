@@ -67,7 +67,7 @@ const Login = () => {
                 route.push("/")
             }, 2000)
         } else {
-            toast.error("Please fix the errors in the form")
+            toast.error("Please check errors in the form")
         }
     }
 

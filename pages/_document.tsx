@@ -7,10 +7,7 @@ export default function Document() {
   return (
     <Html lang="en">
 
-      <Head>
-
-      </Head>
-
+      <Head />
       <body className="antialiased w-full ">
         <Main />
         <NextScript />

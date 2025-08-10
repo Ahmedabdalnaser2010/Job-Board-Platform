@@ -7,6 +7,7 @@ export default function Home() {
     <>
       <Head>
         <title>Job Platform - ALX</title>
+        <link rel="icon" href="/assets/icons/Icon+bg.svg" />
       </Head>
       <div>
         <HomeBody />

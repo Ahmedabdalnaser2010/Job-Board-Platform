@@ -21,6 +21,8 @@ type FilterContextType = {
     setFilteredData: React.Dispatch<React.SetStateAction<TDetailedJobData[]>>;
     sortingValue: string;
     setSortingValue: React.Dispatch<React.SetStateAction<string>>;
+    sortingBYPosting: string;
+    setSortingByPosting: React.Dispatch<React.SetStateAction<string>>;
     getFilteredItemsByCategory: TDetailedJobData[];
     getFilteredItemsByJobTitle: TDetailedJobData[];
     getFilteredItemsByLocation: TDetailedJobData[];
@@ -43,6 +45,8 @@ const FilterContext = createContext<FilterContextType>({
     setFilteredData: () => { },
     sortingValue: "",
     setSortingValue: () => { },
+    sortingBYPosting: "",
+    setSortingByPosting: () => { },
     getFilteredItemsByCategory: [],
     getFilteredItemsByJobTitle: [],
     getFilteredItemsByLocation: [],
@@ -60,7 +64,8 @@ const FilterProvider = ({ children }: { children: ReactNode }) => {
 
     const [searchValues, setSearchValues] = useState<TsearchInputs>({ category: "", jobTitle: "", location: "", experience: "" })
     const [filteredData, setFilteredData] = useState<TDetailedJobData[]>([])
-    const [sortingValue, setSortingValue] = useState("Min to Max")
+    const [sortingValue, setSortingValue] = useState("")
+    const [sortingBYPosting, setSortingByPosting] = useState("")
     const { jobData } = useContext(ApiContext)
 
 
@@ -135,19 +140,33 @@ const FilterProvider = ({ children }: { children: ReactNode }) => {
         ([...getFilteredItemsByLocation].length > 0) ? getFilteredItemsByLocation : ([...getFilteredItemsByExperience]?.length > 0) ? getFilteredItemsByExperience : ([...getFilteredItemsByLocation].length == 0 && [...getFilteredItemsByExperience].length == 0 && [...getFilteredItemsByJobTitle].length > 0) ? getFilteredItemsByJobTitle : ([...getFilteredItemsByLocation].length == 0 && [...getFilteredItemsByExperience].length == 0 && [...getFilteredItemsByJobTitle].length == 0 && [...getFilteredItemsByCategory].length > 0) ? getFilteredItemsByCategory : jobData
 
 
+    const finalFetchedDataDuetoPublishing: TDetailedJobData[] =
+        sortingBYPosting === "Newest"
+            ? [...finalFetchedDataWitoutSorting].sort((a, b) => {
+                const dateA = new Date(a.posting_date || 0).getTime();
+                const dateB = new Date(b.posting_date || 0).getTime();
+                return Number(dateB) - Number(dateA);
+            })
+            : sortingBYPosting === "Oldest"
+                ? [...finalFetchedDataWitoutSorting].sort((a, b) => {
+                    const dateA = new Date(a.posting_date || 0).getTime();
+                    const dateB = new Date(b.posting_date || 0).getTime();
+                    return Number(dateA) - Number(dateB);
+                })
+                : [...finalFetchedDataWitoutSorting];
 
     // final filtering results
 
     const finalFetchedData: TDetailedJobData[] = sortingValue === "Min to Max" ?
-        finalFetchedDataWitoutSorting.sort((a, b) => a.salary_range.min - b.salary_range.min) :
+        finalFetchedDataDuetoPublishing.sort((a, b) => a.salary_range.min - b.salary_range.min) :
         sortingValue === "Max to Min" ?
-            finalFetchedDataWitoutSorting.sort((a, b) => b.salary_range.min - a.salary_range.min) :
-            finalFetchedDataWitoutSorting
+            finalFetchedDataDuetoPublishing.sort((a, b) => b.salary_range.min - a.salary_range.min) :
+            finalFetchedDataDuetoPublishing
 
 
 
     return (
-        <FilterContext.Provider value={{ jobData, searchValues, setSearchValues, getFilteredItemsByCategory, getFilteredItemsByJobTitle, getFilteredItemsByLocation, filteredUniqueCategories, filteredUniquejobTitle, getFilteredItemsByExperience, filteredUniqueLocation, filteredUniqueExperience, finalFetchedData, filteredData, setFilteredData, finalFetchedDataWitoutSorting, setSortingValue, sortingValue }}>
+        <FilterContext.Provider value={{ jobData, searchValues, setSearchValues, getFilteredItemsByCategory, getFilteredItemsByJobTitle, getFilteredItemsByLocation, filteredUniqueCategories, filteredUniquejobTitle, getFilteredItemsByExperience, filteredUniqueLocation, filteredUniqueExperience, finalFetchedData, filteredData, setFilteredData, finalFetchedDataWitoutSorting, setSortingValue, sortingValue, sortingBYPosting, setSortingByPosting }}>
 
             {children}
 
